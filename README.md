@@ -8,6 +8,8 @@ We started at our “start” node, which in this case was node “A”. Node A 
 
 When we have the earliest start and finish values for all nodes, we can then backtrack from our end node E. We know what to put into E, since it is the end node and therefor have the same earliest and latest values. We then do the opposite of before by subtracting latest finish with the duration and gets the latest start value. That value is then transferred to the latest finish of the node pointing to it. The only case where this doesn’t hold either, is when the parent node points at 1 or more nodes then  we pick the lowest value. See picture below.
 
+![asd](https://github.com/Flazhed/CritcalPathSPE/blob/master/asd.png)
+
 
 The critical path is calculated by looking at the earliest- and latest finish values, if subtracted gives the values 0 we know that this node/activity is on the critical path. BECOS? .. 
 
