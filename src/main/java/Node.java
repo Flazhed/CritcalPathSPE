@@ -9,10 +9,15 @@ public class Node {
     private int earlyFinish;
     private int lateStart;
     private int lateFinish;
+    private int totalFloat;
 
-    public Node(String name, int duration){
+    public Node(String name, int duration) {
         this.name = name;
         this.duration = duration;
+    }
+
+    public void setTotalFloat() {
+        totalFloat = this.getLateFinish() - this.getEarlyFinish();
     }
 
     public String getName() {
@@ -33,6 +38,7 @@ public class Node {
 
     public void setLateFinish(int lateFinish) {
         this.lateFinish = lateFinish;
+        setTotalFloat();
     }
 
     public int getDuration() {
@@ -58,5 +64,15 @@ public class Node {
 
     public void setEarlyFinish(int earlyFinish) {
         this.earlyFinish = earlyFinish;
+    }
+
+    @Override
+    public String toString() {
+        return "name:'" + name + '\'' +
+                ", earlyStart: " + earlyStart +
+                ", earlyFinish: " + earlyFinish +
+                ", lateStart: " + lateStart +
+                ", lateFinish: " + lateFinish +
+                ", totalFloat: " + totalFloat;
     }
 }

@@ -5,7 +5,7 @@ public class SPE6 {
 
     private Graph graph;
 
-    public void initGraph(){
+    public void initGraph() {
 
         graph = new Graph();
         graph.addNode(new Node("A", 10));
@@ -29,11 +29,7 @@ public class SPE6 {
         graph.addEdge(7, 4);
 
 
-
     }
-
-
-
 
 
     public static void main(String[] args) {
@@ -43,6 +39,10 @@ public class SPE6 {
         ex.graph.calculateEarly();
         ex.graph.calculateLate();
         ex.graph.criticalPath();
+        for (Node node : ex.graph.getGraph()) {
+            System.out.println(node.toString());
+        }
+
         System.out.println("break");
     }
 }
